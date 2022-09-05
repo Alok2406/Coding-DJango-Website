@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}About us{% endblock title %}
+
+{% block aboutactive %} active {% endblock aboutactive %}
+{% block body %}
+{% load static %}
+
+    <img src="/static/img/about.png" alt="About Banner" class="img-fluid my-3" style="width:100%">
+    
+    <div class="container mt-3 my-3">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <center>
+        <h1 class="fw-light">A Code Quote</h1>
+        <p class="lead text-muted"><i>“Any fool can write code that a computer can understand. <br>Good programmers write code that humans can understand.”</i></p>
+        <p>
+          <a href="/blog" class="btn btn-primary rounded-pill my-2">Explore Our Blog</a>
+        </p>
+      </center> 
+      </div>
+    </div>  
+    
+    <div class="container my-3 mb-3">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <rect> 
+              <img class="card-img-top" width="300" height="250" src='/static/img/p1.png' 
+              alt="Card image cap">
+            </rect>
+              
+
+            <div class="card-body">
+              <h5><center>Prepare With Us</h5>
+              <p class="card-text"> <center>Prepare for an interview with millions of articles and courses designed by experts.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <rect> 
+              <img class="card-img-top" width="300" height="250" src='/static/img/photo2.png' alt="Card image cap">
+            </rect>
+            <div class="card-body">
+              <h5><center>Be interview Ready</h5>
+              <p class="card-text"><center>
+                Don’t know where to apply? Stop by <i><b>Code_Smash</b></i> where we offer multiple opportunities for you to get hired.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <rect> 
+              <img class="card-img-top" width="300" height="250" src='/static/img/p3.png' alt="Card image cap">
+            </rect>
+            <div class="card-body">
+              <h5><center>Grow With Us</h5>
+              <p class="card-text"><center> 
+                Gain and share your knowledge & skills with a variety of learning platforms offered by <br> Code_Smash.</p>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+
+    </div>
+    <br>
+
+{% endblock %}

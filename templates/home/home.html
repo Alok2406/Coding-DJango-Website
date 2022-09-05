@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %} 
+{% block homeactive %} active {% endblock homeactive %}
+{% block js %}
+      <script>
+      let previews=document.getElementsByClassName('preview');
+      Array.from(previews).forEach((element)=>{
+          element.innerHTML=element.innerText;
+      })
+    </script>
+{% endblock js %}
+
+{% block body %}
+<div class="container my-3">
+  <div class="p-4 p-md-5 mb-4 text-dark border rounded bg-light">
+    <div class="col-md-6 px-0"><br><br><br>
+      <h1 class="display-7 fst-italic">Welcome To Code_Smash..!</h1><br>
+      <p class="mt-2 mb-3 text-sm text-gray-500 fst-italic md:text-base">Confused on which course to take?<br> 
+        I have got you covered. Browse courses and find out the best course for you and 
+        guess what Its all for free! <br>Code_Smash is my attempt to teach basics and 
+        those coding techniques to people in short time which took me ages to learn.
+      </p><br>
+      <a class="btn rounded-pill btn-primary btn-md" href="/blog" role="button">Go To Blog</a><br>
+    </div>
+  </div>
+</div>
+
+  
+  
+    <!--div class="row mb-2">
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">World</strong>
+              <h3 class="mb-0">Featured post</h3>
+              <div class="mb-1 text-muted">Nov 12</div>
+              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <a href="/blog/{{post.slug}}" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0">Post title</h3>
+              <div class="mb-1 text-muted">Nov 11</div>
+              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    
+            </div>
+          </div>
+        </div>
+    </div-->
+
+    <!--Code to handle Our Popular Blogposts-->
+<div class="container my-3">
+    <span class="text-primary fs-2 fst-italic "><center> Our Popular Blogposts </center>
+    </span>
+    {% for post in top_post %} 
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary">Article by {{post.author}} <span class="badge rounded-pill bg-info text-dark">{{post.views}}</strong>
+        <h3 class="mb-0"><a class="text-dark" href="/blog/{{post.slug}}">{{post.title}}</a></h3>
+        <div class="mb-1 text-muted">{{post.timeStamp}}</div>
+        <p class="card-text mb-auto">
+          <div class="preview">
+            {{post.content|safe|truncatechars:500}} 
+            <!--safe is added to render html inside django website-->
+            <!--truncatechars are added to slice extra charecters from post.content-->
+          </div>
+        </p>
+        <div class="my-2">
+          <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary rounded-pill">Continue reading</a>
+        </div>
+  
+      </div>
+    </div>  
+  {% endfor %}
+  
+</div>
+{% endblock %}
