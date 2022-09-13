@@ -1,0 +1,1 @@
+web: gunicorn codesmash.wsgi --log-file -
