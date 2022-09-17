@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*%t(@((f$5jk47ermy9w!knvt&2nz4#(b+y9gwa*pjy9w*&dal'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #False
+DEBUG = False #True 
 
 ALLOWED_HOSTS = ['codedash-alok.herokuapp.com','127.0.0.1']
 
