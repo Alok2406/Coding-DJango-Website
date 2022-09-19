@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate,login,logout
 
 def home(request):
     # code to show top_post on home page of code_smash
-    top_post =Cpost.objects.all().order_by('-views').values()[0:2]
+    top_post =Cpost.objects.all().order_by('-views').values()[0:3]
     context={'top_post':top_post}
     return render(request,'home/home.html',context)
     #return HttpResponse("we are at home")
